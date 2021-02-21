@@ -5,6 +5,7 @@ defmodule Chat do
   # for more information on OTP Applications
   def start(_type, _args) do
     import Supervisor.Spec, warn: false
+    Chat.Setup.setup()
 
     children = [
       # Start the endpoint when the application starts

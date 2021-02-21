@@ -19,6 +19,10 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
+config :mnesia, :dir, 'mnesia/data'
+
+config :chat, cluster_role: :primary, primary_node: :"n1@127.0.0.1"
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
